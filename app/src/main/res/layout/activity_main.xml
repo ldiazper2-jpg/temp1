@@ -49,11 +49,19 @@
             android:layout_weight="1"
             android:paddingTop="8dp" />
 
+        <!-- Fila de acciones: ahora con 4 botones -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Abrir" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDownload"
