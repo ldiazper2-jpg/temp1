@@ -11,20 +11,21 @@
         app:title="@string/app_name" />
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="URL">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputUrl"
-                android:inputType="textUri"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="textUri" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -33,11 +34,12 @@
             android:orientation="horizontal"
             android:gravity="end"
             android:paddingTop="8dp">
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAddUrl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agregar"/>
+                android:text="Agregar" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -45,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingTop="8dp"/>
+            android:paddingTop="8dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,11 +59,23 @@
                 android:id="@+id/btnDownload"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Descargar"/>
+                android:layout_weight="1"
+                android:text="Descargar" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBackup"
                 android:layout_width="0dp"
-                android:layo
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Backup" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRestore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Restaurar" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
