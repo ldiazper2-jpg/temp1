@@ -3,6 +3,7 @@ package com.example.multiurl
 import android.Manifest
 import android.app.DownloadManager
 import android.content.Context
+import android.content.Intent   // 👈 FALTABA ESTA IMPORTACIÓN
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
@@ -26,14 +27,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private fun openSelectedInBrowser() {
-    val sel = adapter.getSelectedOrDefault()
-    if (sel == null) {
-        Toast.makeText(this, "Agrega una URL primero", Toast.LENGTH_SHORT).show()
-        return
-    }
-    startActivity(Intent(this, BrowserActivity::class.java).putExtra(BrowserActivity.EXTRA_URL, sel.url))
-}
 
     private lateinit var binding: ActivityMainBinding
     private val db by lazy { AppDatabase.get(this) }
@@ -96,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnDownload.setOnClickListener { startDownloadFromSelected() }
         binding.btnBackup.setOnClickListener { createBackupLauncher.launch("multiurl-backup.json") }
         binding.btnRestore.setOnClickListener { pickBackupLauncher.launch(arrayOf("application/json")) }
-        binding.btnOpen.setOnClickListener { openSelectedInBrowser() }
+        binding.btnOpen.setOnClickListener { openSelectedInBrowser() } // 👈 Abrir en WebView
 
         lifecycleScope.launch {
             val dao = db.urlDao()
@@ -211,5 +204,15 @@ class MainActivity : AppCompatActivity() {
         val dm = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         val id = dm.enqueue(request)
         Toast.makeText(this, "Descarga iniciada (#$id)", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun openSelectedInBrowser() {
+        val sel = adapter.getSelectedOrDefault()
+        if (sel == null) {
+            Toast.makeText(this, "Agrega una URL primero", Toast.LENGTH_SHORT).show()
+            return
+        }
+        startActivity(Intent(this, BrowserActivity::class.java)
+            .putExtra(BrowserActivity.EXTRA_URL, sel.url))
     }
 }
