@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- círculo blanco simple -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M54,8a46,46 0 1 1 0,92a46,46 0 1 1 0,-92z"/>
+    <!-- letra M oscura en el centro -->
+    <path
+        android:fillColor="#202124"
+        android:pathData="M33,74 L33,35 L43,35 L54,55 L65,35 L75,35 L75,74 L66,74 L66,50 L54,69 L42,50 L42,74z"/>
+</vector>
