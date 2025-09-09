@@ -18,7 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MultiURL">
 
-        <activity android:name=".MainActivity">
+        <!-- 👇 Debe declarar exported si tiene intent-filter -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,7 +38,10 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <receiver android:name=".receiver.DownloadCompleteReceiver">
+        <!-- 👇 También con exported explícito -->
+        <receiver
+            android:name=".receiver.DownloadCompleteReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
