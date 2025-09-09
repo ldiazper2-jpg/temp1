@@ -1,20 +1,20 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="@string/app_name"/>
+        app:title="@string/app_name" />
 
     <LinearLayout
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="56dp">
+        android:layout_height="match_parent">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -64,16 +64,4 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBackup"
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Backup"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRestore"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Restaurar"/>
-        </LinearLayout>
-    </LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+                android:layo
