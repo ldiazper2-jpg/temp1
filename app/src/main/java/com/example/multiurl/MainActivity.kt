@@ -26,6 +26,14 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+    private fun openSelectedInBrowser() {
+    val sel = adapter.getSelectedOrDefault()
+    if (sel == null) {
+        Toast.makeText(this, "Agrega una URL primero", Toast.LENGTH_SHORT).show()
+        return
+    }
+    startActivity(Intent(this, BrowserActivity::class.java).putExtra(BrowserActivity.EXTRA_URL, sel.url))
+}
 
     private lateinit var binding: ActivityMainBinding
     private val db by lazy { AppDatabase.get(this) }
