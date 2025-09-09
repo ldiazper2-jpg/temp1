@@ -96,6 +96,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnDownload.setOnClickListener { startDownloadFromSelected() }
         binding.btnBackup.setOnClickListener { createBackupLauncher.launch("multiurl-backup.json") }
         binding.btnRestore.setOnClickListener { pickBackupLauncher.launch(arrayOf("application/json")) }
+        binding.btnOpen.setOnClickListener { openSelectedInBrowser() }
 
         lifecycleScope.launch {
             val dao = db.urlDao()
