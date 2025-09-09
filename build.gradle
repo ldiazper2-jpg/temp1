@@ -1,31 +1,10 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.5.0'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24'
-        // NUEVO
-    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
-
-    // Room
-    implementation 'androidx.room:room-ktx:2.6.1'
-    kapt 'androidx.room:room-compiler:2.6.1'
-
-    // Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.4'
-    }
+plugins {
+    id 'com.android.application' version '8.5.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.24' apply false
+    id 'org.jetbrains.kotlin.kapt' version '1.9.24' apply false
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-task clean(type: Delete) {
+// (opcional) tareas útiles
+tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
