@@ -4,7 +4,7 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Letra D (trazo grueso), usando fillType evenOdd para hueco interno -->
+    <!-- Letra D blanca con hueco interior -->
     <path
         android:fillType="evenOdd"
         android:fillColor="#FFFFFFFF"
