@@ -7,9 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    defaults:
-      run:
-        working-directory: MultiUrlDownloader
 
     steps:
       - uses: actions/checkout@v4
@@ -22,6 +19,12 @@ jobs:
 
       - name: Install Android SDK
         uses: android-actions/setup-android@v3
+
+      # 👇 instala las plataformas y herramientas necesarias
+      - name: Install SDK packages
+        run: |
+          yes | sdkmanager --licenses
+          sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
       - name: Install Gradle 8.7
         run: |
